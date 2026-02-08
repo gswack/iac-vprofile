@@ -36,6 +36,11 @@ jobs:
         # with:
           # terraform_version: 1.7.0
 
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.5
+
       - name: Terraform Init
         id: init
         run: terraform init -backend-config="bucket=$BUCKET_TF_STATE" 
